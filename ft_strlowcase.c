@@ -2,22 +2,17 @@
 
 char    *ft_strlowcase(char *str)
 {
-        int     i;
+    int     i;
 
-        i = 0;
-        while (str[i] != '\0')
-        {
-                if (str[i] >= 'A' && str[i] <= 'Z')
-                {
-                        str[i] += 32;
-                }
-                i++;
-        }
-        return (str);
+    i = -1;
+    while (str[++i])
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] += 32;
+    return (str);
 }
 
 int main()
 {
-        char str[] = "	SALUT TU VAS BIEN";
-        printf("%s", ft_strlowcase(str));
+    char str[] = "SALUT TU VAS BIEN";
+    printf("%s", ft_strlowcase(str));
 }
